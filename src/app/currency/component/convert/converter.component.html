@@ -1,0 +1,30 @@
+<div class="row justify-content-center form-converter">
+  <div class="col-4">
+    <form #converterForm="ngForm" (ngSubmit)="converterClick()">
+      <div class="row no-padding">
+        <div class="col-5">
+          <div class="form-group" [ngClass]="{'has-danger': error}">
+            <input type="text" class="form-control" [(ngModel)]="currencyA" [ngbTypeahead]="search" name="currencyA"/>
+          </div>
+        </div>
+        <div class="col-2 center">
+          <a class="button-inverter" (click)="inverter()">⇌</a>
+        </div>
+        <div class="col-5">
+          <div class="form-group" [ngClass]="{'has-danger': error}" >
+            <input type="text" class="form-control" [(ngModel)]="currencyB" [ngbTypeahead]="search" name="currencyB"/>
+          </div>
+        </div>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="value" name="value">
+      <br/>
+      <button type="submit"
+              class="btn full btn-primary btn-block"
+              name="converter"
+              [disabled]="!converterForm.form.valid">{{ 'Convert' | translate}}
+      </button>
+    </form>
+    <br/>
+    <h2 class="center">{{ result | currency: currencyCurrent :true }}</h2>
+  </div>
+</div>

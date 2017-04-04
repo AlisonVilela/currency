@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-3">
+    <div class="filters">
+      <form #worldForm="ngForm" (ngSubmit)="filtersClick()">
+        {{ 'Base currency' | translate}}
+        <div class="form-group" [ngClass]="{'has-danger': error}">
+          <input type="text" class="form-control" [(ngModel)]="currencyBase" [ngbTypeahead]="search" name="currencyA"/>
+        </div>
+        {{ 'Date' | translate }}
+        <div class="input-group">
+          <input class="form-control"
+                 name="dp" [(ngModel)]="dateRate" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-addon" (click)="d.toggle()" >
+            <img src="./assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </div>
+        </div>
+        <button type="submit"
+                class="btn full btn-primary btn-block"
+                name="world"
+                [disabled]="!worldForm.form.valid">{{ 'Apply filters' | translate }}
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="col-9">
+    <br/>
+    <div class="row">
+      <div class="col-3">
+        <ul class="list-group">
+          <li class="list-group-item"><span class="mr-auto">AUD</span>{{AllRates?.rates?.AUD | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">BGN</span>{{AllRates?.rates?.BGN | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">BRL</span>{{AllRates?.rates?.BRL | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">CAD</span>{{AllRates?.rates?.CAD | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">CHF</span>{{AllRates?.rates?.CHF | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">CNY</span>{{AllRates?.rates?.CNY | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">CZK</span>{{AllRates?.rates?.CZK | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">DKK</span>{{AllRates?.rates?.DKK | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">GBP</span>{{AllRates?.rates?.GBP | number:'.2-2'}}</li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <ul class="list-group">
+          <li class="list-group-item"><span class="mr-auto">HRK</span>{{AllRates?.rates?.HRK | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">HUF</span>{{AllRates?.rates?.HUF | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">IDR</span>{{AllRates?.rates?.IDR | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">ILS</span>{{AllRates?.rates?.ILS | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">INR</span>{{AllRates?.rates?.INR | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">JPY</span>{{AllRates?.rates?.JPY | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">KRW</span>{{AllRates?.rates?.KRW | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">MXN</span>{{AllRates?.rates?.MXN | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">MYR</span>{{AllRates?.rates?.MYR | number:'.2-2'}}</li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <ul class="list-group">
+          <li class="list-group-item"><span class="mr-auto">NZD</span>{{AllRates?.rates?.NZD | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">PHP</span>{{AllRates?.rates?.PHP | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">PLN</span>{{AllRates?.rates?.PLN | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">RON</span>{{AllRates?.rates?.RON | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">RUB</span>{{AllRates?.rates?.RUB | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">SEK</span>{{AllRates?.rates?.SEK | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">SGD</span>{{AllRates?.rates?.SGD | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">THB</span>{{AllRates?.rates?.THB | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">TRY</span>{{AllRates?.rates?.TRY | number:'.2-2'}}</li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <ul class="list-group">
+          <li class="list-group-item"><span class="mr-auto">NOK</span>{{AllRates?.rates?.NOK | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">HKD</span>{{AllRates?.rates?.HKD | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">ZAR</span>{{AllRates?.rates?.ZAR | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">USD</span>{{AllRates?.rates?.USD | number:'.2-2'}}</li>
+          <li class="list-group-item"><span class="mr-auto">EUR</span>{{AllRates?.rates?.EUR | number:'.2-2'}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

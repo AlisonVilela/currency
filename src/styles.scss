@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+.center{
+  text-align: center;
+}
+
+button.btn{
+  &.full {
+    width: 100%;
+  }
+  &-primary, &-secondary {
+    padding: 0.8em 1.5em;
+    overflow: hidden;
+    &:hover, &.hover,
+    &:focus {
+      cursor: pointer;
+    }
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.no-padding {
+  padding: 0;
+}

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    {{ 'Currency' | translate }}
+  </a>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['currency/converter']">{{ 'Converter' | translate }}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['currency/world']">{{ 'World' | translate }}</a>
+      </li>
+    </ul>
+    <a class="navbar-link" (click)="onClickFlag('en-US')">
+      <img src="./assets/flag/us.svg" width="30" height="30" class="d-inline-block align-top margin-flag pointer" alt="">
+    </a>
+    <a class="navbar-link" (click)="onClickFlag('pt-BR')">
+      <img src="./assets/flag/br.svg" width="30" height="30" class="d-inline-block align-top margin-flag pointer" alt="">
+    </a>
+    <a class="navbar-link" (click)="onClickFlag('es-ES')">
+      <img src="./assets/flag/es.svg" width="30" height="30" class="d-inline-block align-top margin-flag pointer" alt="">
+    </a>
+    <a class="navbar-link" (click)="onClickFlag('de-DE')">
+      <img src="./assets/flag/de.svg" width="30" height="30" class="d-inline-block align-top margin-flag pointer" alt="">
+    </a>
+    <a class="navbar-link" (click)="onClickFlag('it-IT')">
+      <img src="./assets/flag/it.svg" width="30" height="30" class="d-inline-block align-top margin-flag pointer" alt="">
+    </a>
+    <a class="navbar-link" (click)="onClickFlag('zh-CN')">
+      <img src="./assets/flag/cn.svg" width="30" height="30" class="d-inline-block align-top margin-flag pointer" alt="">
+    </a>
+    <a class="navbar-link" (click)="onClickFlag('ja-JP')">
+      <img src="./assets/flag/jp.svg" width="30" height="30" class="d-inline-block align-top margin-flag pointer" alt="">
+    </a>
+  </div>
+</nav>
